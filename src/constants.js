@@ -1,4 +1,4 @@
-export const ageValues = ['0-15', '16-17', '18 vagy idősebb'];
+export const ageValues = ['16 alatt', '16-18 között', '18 vagy idősebb'];
 
 export const sourceCountryColor = [
   {

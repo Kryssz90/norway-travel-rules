@@ -7,7 +7,7 @@ const Vaccine = ({ setGotVaccine }) => (
   <Block>
     <Stack>
       <Heading fontSize={25}>
-        Kapott-e ön valamilyen COVID-19 elleni vakcinált?
+        Kapott-e ön valamilyen COVID-19 elleni vakcinát?
       </Heading>
       <Button
         colorScheme="green"
