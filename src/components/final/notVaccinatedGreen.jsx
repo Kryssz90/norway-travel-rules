@@ -9,14 +9,18 @@ const NotVaccinatedGreen = ({ age }) => {
         <Heading color="orange">Nincs karantén</Heading>
         <Text>
           <UnorderedList>
-            {age > 0 && (
-              <ListItem>
-                Online regisztráció a{' '}
-                <ExternalLink href="https://reg.entrynorway.no" text="reg.entrynorway.no" />{' '}
-                oldalon, leghamarabb 72 órával, legkésőbb pedig 2 órával a beutazás előtt.
-              </ListItem>
-            )}
             {
+              /* Showing only to age 16+ */
+              age > 0 && (
+                <ListItem>
+                  Online regisztráció a{' '}
+                  <ExternalLink href="https://reg.entrynorway.no" text="reg.entrynorway.no" />{' '}
+                  oldalon, leghamarabb 72 órával, legkésőbb pedig 2 órával a beutazás előtt.
+                </ListItem>
+              )
+            }
+            {
+              /* Showing only to age 18+ */
               (age = 2 && (
                 <ListItem>
                   Beutazás előtt kötelező egy 24 óránál nem régebbi antigén gyorsteszt vagy PCR

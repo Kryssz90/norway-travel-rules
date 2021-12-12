@@ -9,13 +9,16 @@ const Vaccinated = ({ age }) => {
         <Heading color="green">Nincs karantén</Heading>
         <Text>
           <UnorderedList>
-            {age > 0 && (
-              <ListItem>
-                Online regisztráció a{' '}
-                <ExternalLink href="https://reg.entrynorway.no" text="reg.entrynorway.no" />{' '}
-                oldalon, leghamarabb 72 órával, legkésőbb pedig 2 órával a beutazás előtt.
-              </ListItem>
-            )}
+            {
+              /* Show only to age 16+ */
+              age > 0 && (
+                <ListItem>
+                  Online regisztráció a{' '}
+                  <ExternalLink href="https://reg.entrynorway.no" text="reg.entrynorway.no" />{' '}
+                  oldalon, leghamarabb 72 órával, legkésőbb pedig 2 órával a beutazás előtt.
+                </ListItem>
+              )
+            }
             <ListItem>
               Határbelépéskor kötelező antigén gyorstesztet végezni, melynek az eredményét meg kell
               várni. Ha nincsen tesztállomás, nem üzemel, vagy a hatóságok másként rendelkeznek,
