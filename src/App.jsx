@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Container, Button, Heading, Stack } from '@chakra-ui/react';
 import Block from './components/utils/block';
 import Start from './components/forms/start';
@@ -12,13 +12,19 @@ import Quarantine from './components/final/quarantine';
 import NotVaccinatedGreen from './components/final/notVaccinatedGreen';
 import Vaccinated from './components/final/vaccinated';
 
-function App() {
+const App = () => {
   const [started, setStarted] = useState(false);
   const [age, setAge] = useState(defaultUserState.age);
-  const [sourceCountry, setSourceCountry] = useState(defaultUserState.sourceCountry);
+  const [sourceCountry, setSourceCountry] = useState(
+    defaultUserState.sourceCountry
+  );
   const [gotVaccine, setGotVaccine] = useState(defaultUserState.gotVaccine);
-  const [approvedVaccinated, setApprovedVaccinated] = useState(defaultUserState.approvedVaccinated);
-  const [wasunderwent, setWasunderwent] = useState(defaultUserState.wasunderwent);
+  const [approvedVaccinated, setApprovedVaccinated] = useState(
+    defaultUserState.approvedVaccinated
+  );
+  const [wasunderwent, setWasunderwent] = useState(
+    defaultUserState.wasunderwent
+  );
 
   const renderComponent = () => {
     if (gotVaccine && approvedVaccinated) return <Vaccinated age={age} />;
@@ -29,11 +35,14 @@ function App() {
 
     if (!started) return <Start setStarted={setStarted} />;
     if (age === undefined) return <Age setAge={setAge} />;
-    if (gotVaccine === undefined) return <Vaccine setGotVaccine={setGotVaccine} />;
+    if (gotVaccine === undefined)
+      return <Vaccine setGotVaccine={setGotVaccine} />;
     if (gotVaccine === true && approvedVaccinated === undefined)
       return <VaccineType setApprovedVaccinated={setApprovedVaccinated} />;
-    if (wasunderwent === undefined) return <WasUnderwent setWasunderwent={setWasunderwent} />;
-    if (sourceCountry === undefined) return <CountryColor setSourceCountry={setSourceCountry} />;
+    if (wasunderwent === undefined)
+      return <WasUnderwent setWasunderwent={setWasunderwent} />;
+    if (sourceCountry === undefined)
+      return <CountryColor setSourceCountry={setSourceCountry} />;
 
     return <Quarantine age={age} />;
   };
@@ -93,14 +102,13 @@ function App() {
             setGotVaccine(undefined);
             setApprovedVaccinated(defaultUserState.approvedVaccinated);
             setWasunderwent(defaultUserState.wasunderwent);
-          }}
-        >
+          }}>
           Újrakezdés
         </Button>
         Frissítve: 2021. 12. 09.
       </Container>
     </div>
   );
-}
+};
 
 export default App;
