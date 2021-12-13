@@ -10,6 +10,7 @@ const Start = ({ setStarted }) => (
     borderWidth="1px"
     borderRadius="lg"
     overflow="hidden"
+    boxShadow="md"
     padding="5px">
     <Text textAlign="justify" marginBottom={3}>
       Ez a kérdőív azért készült, hogy segítsen eligazodni a norvég utazási

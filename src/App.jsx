@@ -8,9 +8,7 @@ import WasUnderwent from './components/forms/wasUnderwent';
 import CountryColor from './components/forms/countryColor';
 import VaccineType from './components/forms/vaccineType';
 import { defaultUserState, ageValues, sourceCountryColor } from './constants';
-import Quarantine from './components/final/quarantine';
-import NotVaccinatedGreen from './components/final/notVaccinatedGreen';
-import Vaccinated from './components/final/vaccinated';
+import Result from './components/final/result';
 
 const App = () => {
   const [started, setStarted] = useState(false);
@@ -26,12 +24,142 @@ const App = () => {
     defaultUserState.wasunderwent
   );
 
+  const getMeasures = () => {
+    const vaccinated = gotVaccine && approvedVaccinated;
+
+    switch (age) {
+      case 0: // under 16
+        switch (vaccinated) {
+          case true: // Approved vaccine
+            return {
+              preRegistration: false,
+              testOnArrival: true,
+              testBeforeArrival: false,
+              quarantine: false,
+              testOnDay3: 'no'
+            };
+          case false: // Not approved or no vaccine
+            switch (wasunderwent) {
+              case true:
+                return {
+                  preRegistration: false,
+                  testOnArrival: true,
+                  testBeforeArrival: false,
+                  quarantine: false,
+                  testOnDay3: 'no'
+                };
+              case false:
+                return {
+                  preRegistration: false,
+                  testOnArrival: true,
+                  testBeforeArrival: false,
+                  quarantine: false,
+                  testOnDay3: 'recommended'
+                };
+              default:
+                // Not underwent data
+                return undefined;
+            }
+          default:
+            // No vaccine data
+            return undefined;
+        }
+      case 1: // 16-18
+        switch (vaccinated) {
+          case true: // Approved vaccine
+            return {
+              preRegistration: true,
+              testOnArrival: true,
+              testBeforeArrival: false,
+              quarantine: false,
+              testOnDay3: 'no'
+            };
+          case false: // Not approved or no vaccine
+            switch (wasunderwent) {
+              case true:
+                return {
+                  preRegistration: true,
+                  testOnArrival: true,
+                  testBeforeArrival: false,
+                  quarantine: false,
+                  testOnDay3: 'no'
+                };
+              case false:
+                return {
+                  preRegistration: true,
+                  testOnArrival: true,
+                  testBeforeArrival: false,
+                  quarantine: false,
+                  testOnDay3: 'recommended'
+                };
+              default:
+                // Not underwent data
+                return undefined;
+            }
+          default:
+            // No vaccine data
+            return undefined;
+        }
+
+      case 2: // 18+
+        switch (vaccinated) {
+          case true: // Approved vaccine
+            return {
+              preRegistration: true,
+              testOnArrival: true,
+              testBeforeArrival: false,
+              quarantine: false,
+              testOnDay3: 'recommended'
+            };
+          case false:
+            switch (wasunderwent) {
+              case true:
+                switch (sourceCountry) {
+                  case 0:
+                  case 1:
+                    return {
+                      preRegistration: true,
+                      testOnArrival: true,
+                      testBeforeArrival: true,
+                      quarantine: false,
+                      testOnDay3: 'no'
+                    };
+                  case 2:
+                  case 3:
+                    return {
+                      preRegistration: true,
+                      testOnArrival: true,
+                      testBeforeArrival: true,
+                      quarantine: true,
+                      testOnDay3: 'endquarantine'
+                    };
+                  default:
+                    return undefined;
+                }
+              case false:
+                return {
+                  preRegistration: true,
+                  testOnArrival: true,
+                  testBeforeArrival: true,
+                  quarantine: true,
+                  testOnDay3: 'endquarantine'
+                };
+              default:
+                return undefined;
+            }
+          default:
+            return undefined;
+        }
+      default:
+        return undefined;
+    }
+  };
+
   const renderComponent = () => {
-    if (gotVaccine && approvedVaccinated) return <Vaccinated age={age} />;
-    if (gotVaccine === false && approvedVaccinated) return <p>Invalid state</p>;
-    if (wasunderwent === false) return <Quarantine age={age} />;
-    if (wasunderwent && (sourceCountry === 0 || sourceCountry === 1))
-      return <NotVaccinatedGreen age={age} />;
+    const measures = getMeasures();
+    if (measures) {
+      return <Result measures={measures} />;
+    }
 
     if (!started) return <Start setStarted={setStarted} />;
     if (age === undefined) return <Age setAge={setAge} />;
@@ -44,7 +172,7 @@ const App = () => {
     if (sourceCountry === undefined)
       return <CountryColor setSourceCountry={setSourceCountry} />;
 
-    return <Quarantine age={age} />;
+    return <>Invalid state</>;
   };
 
   return (

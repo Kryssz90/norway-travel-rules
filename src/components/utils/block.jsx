@@ -4,6 +4,7 @@ import { Box, Center } from '@chakra-ui/react';
 
 const Block = ({ children }) => (
   <Box
+    boxShadow="md"
     maxW="lg"
     width="100%"
     borderWidth="1px"
