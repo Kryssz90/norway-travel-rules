@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/norway-travel-rules/static/js/main.ed4c2096.chunk.js",
-    "main.js.map": "/norway-travel-rules/static/js/main.ed4c2096.chunk.js.map",
+    "main.js": "/norway-travel-rules/static/js/main.e60e66a6.chunk.js",
+    "main.js.map": "/norway-travel-rules/static/js/main.e60e66a6.chunk.js.map",
     "runtime-main.js": "/norway-travel-rules/static/js/runtime-main.2f3ccb1a.js",
     "runtime-main.js.map": "/norway-travel-rules/static/js/runtime-main.2f3ccb1a.js.map",
     "static/js/2.80170cab.chunk.js": "/norway-travel-rules/static/js/2.80170cab.chunk.js",
@@ -15,6 +15,6 @@
   "entrypoints": [
     "static/js/runtime-main.2f3ccb1a.js",
     "static/js/2.80170cab.chunk.js",
-    "static/js/main.ed4c2096.chunk.js"
+    "static/js/main.e60e66a6.chunk.js"
   ]
 }
