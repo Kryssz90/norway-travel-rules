@@ -22829,7 +22829,7 @@
 	  overflow: "hidden",
 	  padding: "5px",
 	  textAlign: "justify",
-	  background: "rgba(255,255,255,0.15)",
+	  background: "rgba(255,255,255,0.08)",
 	  marginBottom: 4
 	}, /*#__PURE__*/React.createElement(Center, null, children));
 
@@ -22856,14 +22856,7 @@
 
 	const Start = ({
 	  setStarted
-	}) => /*#__PURE__*/React.createElement(Box, {
-	  maxW: "lg",
-	  borderWidth: "1px",
-	  borderRadius: "lg",
-	  overflow: "hidden",
-	  boxShadow: "md",
-	  padding: "5px"
-	}, /*#__PURE__*/React.createElement(Text, {
+	}) => /*#__PURE__*/React.createElement(Block, null, /*#__PURE__*/React.createElement(Stack, null, /*#__PURE__*/React.createElement(Text, {
 	  textAlign: "justify",
 	  marginBottom: 3
 	}, "Ez a k\xE9rd\u0151\xEDv az\xE9rt k\xE9sz\xFClt, hogy seg\xEDtsen eligazodni a norv\xE9g utaz\xE1si szab\xE1lyokban. Felh\xEDvjuk a figyelmet, hogy a hivatalos inform\xE1ci\xF3k norv\xE9g \xE9s angol nyelven a korm\xE1ny, a", ' ', /*#__PURE__*/React.createElement(ExternalLink, {
@@ -22894,7 +22887,7 @@
 	  onClick: () => {
 	    setStarted(true);
 	  }
-	}, "Kit\xF6lt\xE9s")));
+	}, "Kit\xF6lt\xE9s"))));
 
 	Start.propTypes = {
 	  setStarted: PropTypes.func.isRequired
@@ -23094,7 +23087,8 @@
 	  gap: 5,
 	  border: "1px",
 	  borderRadius: 10,
-	  borderColor: "teal.100"
+	  borderColor: "teal.100",
+	  textAlign: "left"
 	}, /*#__PURE__*/React.createElement(Box, {
 	  w: "100%",
 	  h: "100%",
