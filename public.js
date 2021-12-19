@@ -23138,7 +23138,13 @@
 	    quarantine,
 	    testOnDay3
 	  } = measures;
-	  return /*#__PURE__*/React.createElement(Block, null, /*#__PURE__*/React.createElement(Stack, null, quarantine ? /*#__PURE__*/React.createElement(Heading, {
+	  const ref = react.exports.useRef(null);
+	  react.exports.useEffect(() => {
+	    ref.current.scrollIntoView();
+	  });
+	  return /*#__PURE__*/React.createElement(Block, null, /*#__PURE__*/React.createElement(Stack, {
+	    ref: ref
+	  }, quarantine ? /*#__PURE__*/React.createElement(Heading, {
 	    color: "red"
 	  }, "Karant\xE9n sz\xFCks\xE9ges") : /*#__PURE__*/React.createElement(Heading, {
 	    color: "green"
