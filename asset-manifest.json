@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/norway-travel-rules/static/js/main.9de848c7.chunk.js",
-    "main.js.map": "/norway-travel-rules/static/js/main.9de848c7.chunk.js.map",
-    "runtime-main.js": "/norway-travel-rules/static/js/runtime-main.2f3ccb1a.js",
-    "runtime-main.js.map": "/norway-travel-rules/static/js/runtime-main.2f3ccb1a.js.map",
-    "static/js/2.80170cab.chunk.js": "/norway-travel-rules/static/js/2.80170cab.chunk.js",
-    "static/js/2.80170cab.chunk.js.map": "/norway-travel-rules/static/js/2.80170cab.chunk.js.map",
-    "static/js/3.6f76716f.chunk.js": "/norway-travel-rules/static/js/3.6f76716f.chunk.js",
-    "static/js/3.6f76716f.chunk.js.map": "/norway-travel-rules/static/js/3.6f76716f.chunk.js.map",
+    "main.js": "/norway-travel-rules/static/js/main.f999aa7e.chunk.js",
+    "main.js.map": "/norway-travel-rules/static/js/main.f999aa7e.chunk.js.map",
+    "runtime-main.js": "/norway-travel-rules/static/js/runtime-main.570d94e6.js",
+    "runtime-main.js.map": "/norway-travel-rules/static/js/runtime-main.570d94e6.js.map",
+    "static/js/2.d258f0da.chunk.js": "/norway-travel-rules/static/js/2.d258f0da.chunk.js",
+    "static/js/2.d258f0da.chunk.js.map": "/norway-travel-rules/static/js/2.d258f0da.chunk.js.map",
+    "static/js/3.bc6e3712.chunk.js": "/norway-travel-rules/static/js/3.bc6e3712.chunk.js",
+    "static/js/3.bc6e3712.chunk.js.map": "/norway-travel-rules/static/js/3.bc6e3712.chunk.js.map",
     "index.html": "/norway-travel-rules/index.html",
-    "static/js/2.80170cab.chunk.js.LICENSE.txt": "/norway-travel-rules/static/js/2.80170cab.chunk.js.LICENSE.txt",
+    "static/js/2.d258f0da.chunk.js.LICENSE.txt": "/norway-travel-rules/static/js/2.d258f0da.chunk.js.LICENSE.txt",
     "static/media/mano-logo.9f2746df.png": "/norway-travel-rules/static/media/mano-logo.9f2746df.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.2f3ccb1a.js",
-    "static/js/2.80170cab.chunk.js",
-    "static/js/main.9de848c7.chunk.js"
+    "static/js/runtime-main.570d94e6.js",
+    "static/js/2.d258f0da.chunk.js",
+    "static/js/main.f999aa7e.chunk.js"
   ]
 }
