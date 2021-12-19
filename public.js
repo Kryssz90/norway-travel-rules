@@ -22825,8 +22825,10 @@
 	  width: "100%",
 	  borderWidth: "1px",
 	  borderRadius: "lg",
+	  borderColor: "gray.700",
 	  overflow: "hidden",
 	  padding: "5px",
+	  textAlign: "justify",
 	  marginBottom: 4
 	}, /*#__PURE__*/React.createElement(Center, null, children));
 
@@ -23378,6 +23380,7 @@
 	    colorScheme: "gray",
 	    size: "sm",
 	    marginTop: "15px",
+	    textColor: "black",
 	    onClick: () => {
 	      setStarted(false);
 	      setAge(defaultUserState.age);
