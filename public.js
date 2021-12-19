@@ -22829,6 +22829,7 @@
 	  overflow: "hidden",
 	  padding: "5px",
 	  textAlign: "justify",
+	  background: "rgba(255,255,255,0.15)",
 	  marginBottom: 4
 	}, /*#__PURE__*/React.createElement(Center, null, children));
 
