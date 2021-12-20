@@ -90,7 +90,12 @@ VaccineType.propTypes = {
 };
 
 const VaccineRow = ({ name, manufacturer, count, setCount }) => (
-  <HStack gap={5} border="1px" borderRadius={10} borderColor="teal.100">
+  <HStack
+    gap={5}
+    border="1px"
+    borderRadius={10}
+    borderColor="teal.100"
+    textAlign="left">
     <Box
       w="100%"
       h="100%"

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import {
   Stack,
   Heading,
@@ -18,9 +18,15 @@ const Result = ({ measures }) => {
     quarantine,
     testOnDay3
   } = measures;
+
+  const ref = useRef(null);
+  useEffect(() => {
+    ref.current.scrollIntoView();
+  });
+
   return (
     <Block>
-      <Stack>
+      <Stack ref={ref}>
         {quarantine ? (
           <Heading color="red">Karantén szükséges</Heading>
         ) : (

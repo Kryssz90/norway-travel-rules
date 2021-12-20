@@ -9,8 +9,11 @@ const Block = ({ children }) => (
     width="100%"
     borderWidth="1px"
     borderRadius="lg"
+    borderColor="gray.700"
     overflow="hidden"
     padding="5px"
+    textAlign="justify"
+    background="rgba(255,255,255,0.08)"
     marginBottom={4}>
     <Center>{children}</Center>
   </Box>

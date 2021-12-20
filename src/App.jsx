@@ -223,6 +223,7 @@ const App = () => {
           colorScheme="gray"
           size="sm"
           marginTop="15px"
+          textColor="black"
           onClick={() => {
             setStarted(false);
             setAge(defaultUserState.age);
