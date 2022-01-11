@@ -37,7 +37,7 @@ const Start = ({ setStarted }) => (
         <ExternalLink
           href="https://www.linkedin.com/in/krisztian-zsobrak/"
           text="Zsobrák Krisztián"
-        />
+        />{' '}
         és Pál Bettina.
       </Text>
 
