@@ -22882,7 +22882,7 @@
 	}, "\xD6ssze\xE1ll\xEDtotta:", ' ', /*#__PURE__*/React.createElement(ExternalLink, {
 	  href: "https://www.linkedin.com/in/krisztian-zsobrak/",
 	  text: "Zsobr\xE1k Kriszti\xE1n"
-	}), "\xE9s P\xE1l Bettina."), /*#__PURE__*/React.createElement(Center, null, /*#__PURE__*/React.createElement(Button, {
+	}), ' ', "\xE9s P\xE1l Bettina."), /*#__PURE__*/React.createElement(Center, null, /*#__PURE__*/React.createElement(Button, {
 	  colorScheme: "green",
 	  onClick: () => {
 	    setStarted(true);
