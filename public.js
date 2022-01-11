@@ -22935,14 +22935,14 @@
 	  name: 'Johnson & Johnson',
 	  score: 2
 	}, {
-	  id: 'sputnik',
-	  manufacturer: 'Gamaleja Kutatóközpont',
-	  name: 'Szputnyik V',
-	  score: 0
-	}, {
 	  id: 'sinopharm',
 	  manufacturer: 'Sinopharm',
 	  name: 'Sinopharm',
+	  score: 1
+	}, {
+	  id: 'sputnik',
+	  manufacturer: 'Gamaleja Kutatóközpont',
+	  name: 'Szputnyik V',
 	  score: 0
 	}];
 
