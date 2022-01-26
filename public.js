@@ -23294,34 +23294,13 @@
 
 	              case false:
 	                // Not underwent
-	                switch (sourceCountry) {
-	                  case 0: // Green
-
-	                  case 1:
-	                    // Orange
-	                    return {
-	                      preRegistration: true,
-	                      testOnArrival: true,
-	                      testBeforeArrival: true,
-	                      quarantine: false,
-	                      testOnDay3: 'no'
-	                    };
-
-	                  case 2: // Red
-
-	                  case 3:
-	                    // Dark red
-	                    return {
-	                      preRegistration: true,
-	                      testOnArrival: true,
-	                      testBeforeArrival: true,
-	                      quarantine: true,
-	                      testOnDay3: 'endquarantine'
-	                    };
-
-	                  default:
-	                    return undefined;
-	                }
+	                return {
+	                  preRegistration: true,
+	                  testOnArrival: true,
+	                  testBeforeArrival: true,
+	                  quarantine: false,
+	                  testOnDay3: 'no'
+	                };
 
 	              default:
 	                return undefined;
@@ -23390,7 +23369,7 @@
 	      setApprovedVaccinated(defaultUserState.approvedVaccinated);
 	      setWasunderwent(defaultUserState.wasunderwent);
 	    }
-	  }, "\xDAjrakezd\xE9s"), "Friss\xEDtve: 2021. 12. 09."));
+	  }, "\xDAjrakezd\xE9s"), "Friss\xEDtve: 2022. 01. 26."));
 	};
 
 	const reportWebVitals = onPerfEntry => {
