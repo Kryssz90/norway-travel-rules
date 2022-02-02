@@ -23138,6 +23138,7 @@
 	    quarantine,
 	    testOnDay3
 	  } = measures;
+	  const noMeasure = !preRegistration && !testOnArrival && !testBeforeArrival && !quarantine && testOnDay3 !== 'recommended';
 	  const ref = react.exports.useRef(null);
 	  react.exports.useEffect(() => {
 	    ref.current.scrollIntoView();
@@ -23151,7 +23152,7 @@
 	  }, "Nincs karant\xE9n"), /*#__PURE__*/React.createElement(Text, null, /*#__PURE__*/React.createElement(UnorderedList, null, preRegistration && /*#__PURE__*/React.createElement(ListItem, null, "Online regisztr\xE1ci\xF3 a", ' ', /*#__PURE__*/React.createElement(ExternalLink, {
 	    href: "https://reg.entrynorway.no",
 	    text: "reg.entrynorway.no"
-	  }), ' ', "oldalon, leghamarabb 72 \xF3r\xE1val, legk\xE9s\u0151bb pedig 2 \xF3r\xE1val a beutaz\xE1s el\u0151tt."), testBeforeArrival && /*#__PURE__*/React.createElement(ListItem, null, "Beutaz\xE1s el\u0151tt k\xF6telez\u0151 egy 24 \xF3r\xE1n\xE1l nem r\xE9gebbi antig\xE9n gyorsteszt vagy PCR teszt. A mintav\xE9tel ideje sz\xE1m\xEDt."), testOnArrival && /*#__PURE__*/React.createElement(ListItem, null, "Hat\xE1rbel\xE9p\xE9skor k\xF6telez\u0151 antig\xE9n gyorstesztet v\xE9gezni, melynek az eredm\xE9ny\xE9t meg kell v\xE1rni. Ha nincsen teszt\xE1llom\xE1s, nem \xFCzemel, vagy a hat\xF3s\xE1gok m\xE1sk\xE9nt rendelkeznek, akkor 24 \xF3r\xE1n bel\xFCl kell antig\xE9n vagy PCR tesztet csin\xE1ltatni. Amennyiben a gyorsteszt eredm\xE9nye pozit\xEDv, \xFAgy 24 \xF3r\xE1n bel\xFCl k\xF6telez\u0151 PCR tesztet csin\xE1ltatni."), testOnDay3 === 'recommended' && /*#__PURE__*/React.createElement(ListItem, null, "Nincs karant\xE9n, azonban a 3. napon aj\xE1nlott tesztelni."))), quarantine && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Heading, {
+	  }), ' ', "oldalon, leghamarabb 72 \xF3r\xE1val, legk\xE9s\u0151bb pedig 2 \xF3r\xE1val a beutaz\xE1s el\u0151tt."), testBeforeArrival && /*#__PURE__*/React.createElement(ListItem, null, "Beutaz\xE1s el\u0151tt k\xF6telez\u0151 egy 24 \xF3r\xE1n\xE1l nem r\xE9gebbi antig\xE9n gyorsteszt vagy PCR teszt. A mintav\xE9tel ideje sz\xE1m\xEDt."), testOnArrival && /*#__PURE__*/React.createElement(ListItem, null, "Hat\xE1rbel\xE9p\xE9skor k\xF6telez\u0151 antig\xE9n gyorstesztet v\xE9gezni, melynek az eredm\xE9ny\xE9t meg kell v\xE1rni. Ha nincsen teszt\xE1llom\xE1s, nem \xFCzemel, vagy a hat\xF3s\xE1gok m\xE1sk\xE9nt rendelkeznek, akkor 24 \xF3r\xE1n bel\xFCl kell antig\xE9n vagy PCR tesztet csin\xE1ltatni. Amennyiben a gyorsteszt eredm\xE9nye pozit\xEDv, \xFAgy 24 \xF3r\xE1n bel\xFCl k\xF6telez\u0151 PCR tesztet csin\xE1ltatni."), testOnDay3 === 'recommended' && /*#__PURE__*/React.createElement(ListItem, null, "Nincs karant\xE9n, azonban a 3. napon aj\xE1nlott tesztelni."))), noMeasure && /*#__PURE__*/React.createElement(Text, null, "Nincs \xE9rv\xE9nyben korl\xE1toz\xE1s, aj\xE1nl\xE1s az \xD6n r\xE9sz\xE9re"), quarantine && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Heading, {
 	    as: "h3"
 	  }, "Karant\xE9n:"), /*#__PURE__*/React.createElement(Text, null, /*#__PURE__*/React.createElement(UnorderedList, null, /*#__PURE__*/React.createElement(ListItem, null, "10 nap otthoni karant\xE9n."), /*#__PURE__*/React.createElement(ListItem, null, "A beutaz\xE1st k\xF6vet\u0151 3. napon lehet\u0151s\xE9g van egy PCR teszt elv\xE9gz\xE9s\xE9re, melynek negat\xEDv eredm\xE9ny\xE9vel v\xE9get \xE9rhet a karant\xE9n."), /*#__PURE__*/React.createElement(ListItem, null, "A beutaz\xE1s napja a 0. nap, az eredm\xE9ny pedig a teszt elv\xE9gz\xE9se ut\xE1n 24-72 \xF3r\xE1n bel\xFCl van meg."))))));
 	};
@@ -23180,91 +23181,23 @@
 	    switch (age) {
 	      case 0:
 	        // under 16
-	        switch (vaccinated) {
-	          case true:
-	            // Approved vaccine
-	            return {
-	              preRegistration: false,
-	              testOnArrival: true,
-	              testBeforeArrival: false,
-	              quarantine: false,
-	              testOnDay3: 'no'
-	            };
-
-	          case false:
-	            // Not approved or no vaccine
-	            switch (wasunderwent) {
-	              case true:
-	                return {
-	                  preRegistration: false,
-	                  testOnArrival: true,
-	                  testBeforeArrival: false,
-	                  quarantine: false,
-	                  testOnDay3: 'no'
-	                };
-
-	              case false:
-	                return {
-	                  preRegistration: false,
-	                  testOnArrival: true,
-	                  testBeforeArrival: false,
-	                  quarantine: false,
-	                  testOnDay3: 'recommended'
-	                };
-
-	              default:
-	                // Not underwent data
-	                return undefined;
-	            }
-
-	          default:
-	            // No vaccine data
-	            return undefined;
-	        }
+	        return {
+	          preRegistration: false,
+	          testOnArrival: false,
+	          testBeforeArrival: false,
+	          quarantine: false,
+	          testOnDay3: 'no'
+	        };
 
 	      case 1:
 	        // 16-18
-	        switch (vaccinated) {
-	          case true:
-	            // Approved vaccine
-	            return {
-	              preRegistration: true,
-	              testOnArrival: true,
-	              testBeforeArrival: false,
-	              quarantine: false,
-	              testOnDay3: 'no'
-	            };
-
-	          case false:
-	            // Not approved or no vaccine
-	            switch (wasunderwent) {
-	              case true:
-	                return {
-	                  preRegistration: true,
-	                  testOnArrival: true,
-	                  testBeforeArrival: false,
-	                  quarantine: false,
-	                  testOnDay3: 'no'
-	                };
-
-	              case false:
-	                return {
-	                  preRegistration: true,
-	                  testOnArrival: true,
-	                  testBeforeArrival: false,
-	                  quarantine: false,
-	                  testOnDay3: 'recommended'
-	                };
-
-	              default:
-	                // Not underwent data
-	                return undefined;
-	            }
-
-	          default:
-	            // No vaccine data
-	            return undefined;
-	        }
+	        return {
+	          preRegistration: true,
+	          testOnArrival: false,
+	          testBeforeArrival: false,
+	          quarantine: false,
+	          testOnDay3: 'no'
+	        };
 
 	      case 2:
 	        // 18+
@@ -23273,7 +23206,7 @@
 	            // Approved vaccine
 	            return {
 	              preRegistration: true,
-	              testOnArrival: true,
+	              testOnArrival: false,
 	              testBeforeArrival: false,
 	              quarantine: false,
 	              testOnDay3: 'no'
@@ -23286,7 +23219,7 @@
 	                // Underwent
 	                return {
 	                  preRegistration: true,
-	                  testOnArrival: true,
+	                  testOnArrival: false,
 	                  testBeforeArrival: false,
 	                  quarantine: false,
 	                  testOnDay3: 'no'
@@ -23296,7 +23229,7 @@
 	                // Not underwent
 	                return {
 	                  preRegistration: true,
-	                  testOnArrival: true,
+	                  testOnArrival: false,
 	                  testBeforeArrival: true,
 	                  quarantine: false,
 	                  testOnDay3: 'no'
@@ -23369,7 +23302,7 @@
 	      setApprovedVaccinated(defaultUserState.approvedVaccinated);
 	      setWasunderwent(defaultUserState.wasunderwent);
 	    }
-	  }, "\xDAjrakezd\xE9s"), "Friss\xEDtve: 2022. 01. 26."));
+	  }, "\xDAjrakezd\xE9s"), "Friss\xEDtve: 2022. 02. 02."));
 	};
 
 	const reportWebVitals = onPerfEntry => {
