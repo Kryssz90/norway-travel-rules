@@ -29,84 +29,28 @@ const App = () => {
 
     switch (age) {
       case 0: // under 16
-        switch (vaccinated) {
-          case true: // Approved vaccine
-            return {
-              preRegistration: false,
-              testOnArrival: true,
-              testBeforeArrival: false,
-              quarantine: false,
-              testOnDay3: 'no'
-            };
-          case false: // Not approved or no vaccine
-            switch (wasunderwent) {
-              case true:
-                return {
-                  preRegistration: false,
-                  testOnArrival: true,
-                  testBeforeArrival: false,
-                  quarantine: false,
-                  testOnDay3: 'no'
-                };
-              case false:
-                return {
-                  preRegistration: false,
-                  testOnArrival: true,
-                  testBeforeArrival: false,
-                  quarantine: false,
-                  testOnDay3: 'recommended'
-                };
-              default:
-                // Not underwent data
-                return undefined;
-            }
-          default:
-            // No vaccine data
-            return undefined;
-        }
+        return {
+          preRegistration: false,
+          testOnArrival: false,
+          testBeforeArrival: false,
+          quarantine: false,
+          testOnDay3: 'no'
+        };
       case 1: // 16-18
-        switch (vaccinated) {
-          case true: // Approved vaccine
-            return {
-              preRegistration: true,
-              testOnArrival: true,
-              testBeforeArrival: false,
-              quarantine: false,
-              testOnDay3: 'no'
-            };
-          case false: // Not approved or no vaccine
-            switch (wasunderwent) {
-              case true:
-                return {
-                  preRegistration: true,
-                  testOnArrival: true,
-                  testBeforeArrival: false,
-                  quarantine: false,
-                  testOnDay3: 'no'
-                };
-              case false:
-                return {
-                  preRegistration: true,
-                  testOnArrival: true,
-                  testBeforeArrival: false,
-                  quarantine: false,
-                  testOnDay3: 'recommended'
-                };
-              default:
-                // Not underwent data
-                return undefined;
-            }
-          default:
-            // No vaccine data
-            return undefined;
-        }
+        return {
+          preRegistration: true,
+          testOnArrival: false,
+          testBeforeArrival: false,
+          quarantine: false,
+          testOnDay3: 'no'
+        };
 
       case 2: // 18+
         switch (vaccinated) {
           case true: // Approved vaccine
             return {
               preRegistration: true,
-              testOnArrival: true,
+              testOnArrival: false,
               testBeforeArrival: false,
               quarantine: false,
               testOnDay3: 'no'
@@ -116,7 +60,7 @@ const App = () => {
               case true: // Underwent
                 return {
                   preRegistration: true,
-                  testOnArrival: true,
+                  testOnArrival: false,
                   testBeforeArrival: false,
                   quarantine: false,
                   testOnDay3: 'no'
@@ -124,7 +68,7 @@ const App = () => {
               case false: // Not underwent
                 return {
                   preRegistration: true,
-                  testOnArrival: true,
+                  testOnArrival: false,
                   testBeforeArrival: true,
                   quarantine: false,
                   testOnDay3: 'no'
@@ -219,7 +163,7 @@ const App = () => {
           }}>
           Újrakezdés
         </Button>
-        Frissítve: 2022. 01. 26.
+        Frissítve: 2022. 02. 02.
       </Container>
     </div>
   );

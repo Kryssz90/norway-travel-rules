@@ -19,6 +19,13 @@ const Result = ({ measures }) => {
     testOnDay3
   } = measures;
 
+  const noMeasure =
+    !preRegistration &&
+    !testOnArrival &&
+    !testBeforeArrival &&
+    !quarantine &&
+    testOnDay3 !== 'recommended';
+
   const ref = useRef(null);
   useEffect(() => {
     ref.current.scrollIntoView();
@@ -69,6 +76,9 @@ const Result = ({ measures }) => {
             )}
           </UnorderedList>
         </Text>
+        {noMeasure && (
+          <Text>Nincs érvényben korlátozás, ajánlás az Ön részére</Text>
+        )}
         {quarantine && (
           <>
             <Heading as="h3">Karantén:</Heading>
